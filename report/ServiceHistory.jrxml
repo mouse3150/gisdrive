@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version last-->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ServiceHistory" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" whenNoDataType="AllSectionsNoDetail" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" isIgnorePagination="true" uuid="468ddcc6-010c-465e-be6b-24065b5774ab">
+	<property name="ireport.zoom" value="1.7715610000000013"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="6"/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.HorizontalRowLayout"/>
+	<style name="border"/>
+	<subDataset name="ServiceCapacityTrendDataset" uuid="9da66969-c50b-4a97-9e7a-035d89b7f962">
+		<queryString>
+			<![CDATA[]]>
+		</queryString>
+		<field name="value" class="java.lang.Number">
+			<fieldDescription><![CDATA[value]]></fieldDescription>
+		</field>
+		<field name="series" class="java.lang.String">
+			<fieldDescription><![CDATA[series]]></fieldDescription>
+		</field>
+		<field name="category" class="java.lang.String">
+			<fieldDescription><![CDATA[category]]></fieldDescription>
+		</field>
+	</subDataset>
+	<subDataset name="ServiceTimeTrendDataset" uuid="8b2ea25f-9e90-4c1d-b4b7-1ec3ee636f57">
+		<queryString>
+			<![CDATA[]]>
+		</queryString>
+		<field name="category" class="java.lang.String">
+			<fieldDescription><![CDATA[category]]></fieldDescription>
+		</field>
+		<field name="series" class="java.lang.String">
+			<fieldDescription><![CDATA[series]]></fieldDescription>
+		</field>
+		<field name="value" class="java.lang.Number">
+			<fieldDescription><![CDATA[value]]></fieldDescription>
+		</field>
+	</subDataset>
+	<subDataset name="ElasticChangesDataset" uuid="5020d4c2-36ba-48bb-8713-a5920ced4242">
+		<queryString>
+			<![CDATA[]]>
+		</queryString>
+		<field name="category" class="java.lang.String">
+			<fieldDescription><![CDATA[category]]></fieldDescription>
+		</field>
+		<field name="series" class="java.lang.String">
+			<fieldDescription><![CDATA[series]]></fieldDescription>
+		</field>
+		<field name="value" class="java.lang.Number">
+			<fieldDescription><![CDATA[value]]></fieldDescription>
+		</field>
+	</subDataset>
+	<parameter name="createTime" class="java.lang.String"/>
+	<parameter name="serviceName" class="java.lang.String"/>
+	<parameter name="serviceType" class="java.lang.String"/>
+	<parameter name="serviceCapacity" class="java.lang.String"/>
+	<parameter name="serviceTime" class="java.lang.String"/>
+	<parameter name="reportTitle" class="java.lang.String"/>
+	<parameter name="dsServiceCapacityTrend" class="net.sf.jasperreports.engine.JRDataSource"/>
+	<parameter name="dsServiceTimeTrend" class="net.sf.jasperreports.engine.JRDataSource"/>
+	<parameter name="dsElasticChanges" class="net.sf.jasperreports.engine.JRDataSource"/>
+	<title>
+		<band height="542" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="801" height="36" uuid="bc58f0e3-a66c-40d9-9b0d-2853fa22af90"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="华文中宋" size="24" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{reportTitle}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="36" width="80" height="20" uuid="9ebf0a82-647e-4b03-9646-a791e592a211"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="华文中宋" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[服务名称]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="80" y="36" width="277" height="20" uuid="8e1d8d61-d2a7-4ac2-b046-06f8511b7759"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="华文中宋"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{serviceName}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="357" y="36" width="113" height="20" uuid="05d7e30c-98ed-494d-ab99-6fe9199f1008"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="华文中宋" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[时间]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="470" y="36" width="331" height="20" uuid="af015655-3710-453b-b25f-f93ec9ce761e"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="华文中宋"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{createTime}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="56" width="80" height="20" forecolor="#000000" backcolor="#FFFFFF" uuid="a099c706-a5bd-405d-ad6b-cc8ee3ec8b04"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="华文中宋" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[服务类型]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="80" y="56" width="277" height="20" uuid="5da83c53-b7cf-44c7-9ead-b9836950a04a"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="华文中宋" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{serviceType}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="357" y="56" width="113" height="20" forecolor="#000000" backcolor="#FFFFFF" uuid="d0abba03-d193-48ac-8bd0-c83af2b6e93d"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="华文中宋" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[处理量]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="470" y="56" width="120" height="20" uuid="98689b3e-0934-4ede-9b24-c5b534f79165"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="华文中宋" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{serviceCapacity}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="590" y="56" width="80" height="20" forecolor="#000000" backcolor="#FFFFFF" uuid="73871eeb-a255-4475-a5f9-9565beda0e0f"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="华文中宋" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[工作时间]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="670" y="56" width="131" height="20" uuid="17bf3d7f-23c8-4c31-90e3-0d7e0faceb5f"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="华文中宋" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{serviceTime}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="76" width="801" height="18" uuid="c0a4514a-057c-4817-b5f8-2e125cf02138"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="华文中宋" size="12" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[处理量趋势图(单位：个)]]></text>
+			</staticText>
+			<lineChart>
+				<chart>
+					<reportElement x="0" y="94" width="801" height="200" uuid="10e35dcc-189f-4262-853a-4a6fec017e77">
+						<property name="local_mesure_unitheight" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<box>
+						<pen lineWidth="1.0"/>
+						<topPen lineWidth="1.0"/>
+						<leftPen lineWidth="1.0"/>
+						<bottomPen lineWidth="1.0"/>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<chartTitle/>
+					<chartSubtitle/>
+					<chartLegend/>
+				</chart>
+				<categoryDataset>
+					<dataset>
+						<datasetRun subDataset="ServiceCapacityTrendDataset" uuid="a5c689d5-ad64-4c85-9e0a-2c64ae8c22a2">
+							<dataSourceExpression><![CDATA[$P{dsServiceCapacityTrend}]]></dataSourceExpression>
+						</datasetRun>
+					</dataset>
+					<categorySeries>
+						<seriesExpression><![CDATA[$F{series}]]></seriesExpression>
+						<categoryExpression><![CDATA[$F{category}]]></categoryExpression>
+						<valueExpression><![CDATA[$F{value}]]></valueExpression>
+					</categorySeries>
+				</categoryDataset>
+				<linePlot>
+					<plot labelRotation="45.0"/>
+					<categoryAxisFormat labelRotation="45.0">
+						<axisFormat/>
+					</categoryAxisFormat>
+					<valueAxisFormat>
+						<axisFormat/>
+					</valueAxisFormat>
+				</linePlot>
+			</lineChart>
+			<staticText>
+				<reportElement x="0" y="294" width="801" height="18" uuid="361480c4-db4d-49c8-a573-554bd51d21b3"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="华文中宋" size="12" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[工作时间趋势图(单位：毫秒)]]></text>
+			</staticText>
+			<lineChart>
+				<chart>
+					<reportElement x="0" y="312" width="801" height="224" uuid="91e60b89-e006-4318-89f5-cd17388524e7">
+						<property name="local_mesure_unitheight" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<box>
+						<pen lineWidth="1.0"/>
+						<topPen lineWidth="1.0"/>
+						<leftPen lineWidth="1.0"/>
+						<bottomPen lineWidth="1.0"/>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<chartTitle/>
+					<chartSubtitle/>
+					<chartLegend/>
+				</chart>
+				<categoryDataset>
+					<dataset>
+						<datasetRun subDataset="ServiceTimeTrendDataset" uuid="1272aacb-0a3d-4ded-9756-06f46d2240e5">
+							<dataSourceExpression><![CDATA[$P{dsServiceTimeTrend}]]></dataSourceExpression>
+						</datasetRun>
+					</dataset>
+					<categorySeries>
+						<seriesExpression><![CDATA[$F{series}]]></seriesExpression>
+						<categoryExpression><![CDATA[$F{category}]]></categoryExpression>
+						<valueExpression><![CDATA[$F{value}]]></valueExpression>
+					</categorySeries>
+				</categoryDataset>
+				<linePlot>
+					<plot labelRotation="45.0"/>
+					<categoryAxisFormat labelRotation="45.0">
+						<axisFormat/>
+					</categoryAxisFormat>
+					<valueAxisFormat>
+						<axisFormat/>
+					</valueAxisFormat>
+				</linePlot>
+			</lineChart>
+		</band>
+	</title>
+	<detail>
+		<band height="4" splitType="Stretch"/>
+	</detail>
+</jasperReport>

@@ -1,0 +1,52 @@
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd"
+	version="1.0">
+	<persistence-unit name="gcloud" transaction-type="RESOURCE_LOCAL">
+		<properties>
+			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5InnoDBDialect" />
+			<property name="hibernate.connection.provider_class"
+				value="org.hibernate.connection.C3P0ConnectionProvider" />
+			<!--<property name="hibernate.connection.driver_class" value="${db.driver_class}" />
+			<property name="hibernate.connection.username" value="${db.username}" />
+			<property name="hibernate.connection.password" value="${db.password}" />
+			<property name="hibernate.connection.url" value="${db.url}" />
+			
+			 <property name="hibernate.connection.url" value="jdbc:mysql://192.168.190.99:3306/gcloud_adv2?useUnicode=true&amp;characterEncoding=UTF-8" 
+				/> 
+				-->
+			<property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver" />
+			<property name="hibernate.connection.username" value="root" />
+			<property name="hibernate.connection.password" value="root" />
+			<property name="hibernate.connection.url" value="jdbc:mysql://localhost:3306/gisfile?useUnicode=true&amp;characterEncoding=UTF-8" />
+			<!---->
+			<property name="hibernate.hbm2ddl.auto" value="update" />
+			<property name="hibernate.cache.provider_class" value="org.hibernate.cache.HashtableCacheProvider" />
+			<property name="hibernate.show_sql" value="false" />
+			<property name="c3p0.min_size" value="10" />
+			<property name="c3p0.max_size" value="50" />
+			<property name="c3p0.timeout" value="1800" />
+			<property name="c3p0.max_statements" value="500" />
+			<property name="c3p0.breakAfterAcquireFailure" value="false" />
+			<property name="c3p0.testConnectionOnCheckout" value="false" />
+			<property name="c3p0.testConnectionOnCheckin" value="false" />
+			<property name="c3p0.idleConnectionTestPeriod" value="60" />
+			<property name="c3p0.acquireRetryAttempts" value="10" />
+			<property name="c3p0.acquireRetryDelay" value="1000" />
+			<property name="hibernate.c3p0.min_size" value="10" />
+			<property name="hibernate.c3p0.max_size" value="50" />
+			<property name="hibernate.c3p0.timeout" value="1800" />
+			<property name="hibernate.c3p0.max_statements" value="500" />
+			<property name="hibernate.c3p0.breakAfterAcquireFailure"
+				value="false" />
+			<property name="hibernate.c3p0.testConnectionOnCheckout"
+				value="false" />
+			<property name="hibernate.c3p0.testConnectionOnCheckin"
+				value="false" />
+			<property name="hibernate.c3p0.idleConnectionTestPeriod"
+				value="60" />
+			<property name="hibernate.c3p0.acquireRetryAttempts" value="10" />
+			<property name="hibernate.c3p0.acquireRetryDelay" value="1000" />
+		</properties>
+	</persistence-unit>
+</persistence>

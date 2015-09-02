@@ -1,0 +1,72 @@
+<#import "/spring.ftl" as spring />
+<!DOCTYPE html>
+<HTML>
+	<HEAD>
+		<TITLE>移动调研管理系统</TITLE>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<link rel="stylesheet" href="<@spring.url ''/>/bootstrap/css/bootstrap.min.css"
+		media="screen">
+		<script type="text/javascript" src="<@spring.url ''/>/js/jquery-1.10.2.min.js"></script>
+		<script type="text/javascript" src="<@spring.url ''/>/bootstrap/js/bootstrap.js"></script>
+		<style>
+			body {
+				background: url(images/bg.png);
+			}
+			.login_box {
+				background: url(images/login_bg.png);
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				width: 352px;
+				height: 258px;
+				margin-left: -176px;
+				margin-top: -129px;
+			}
+			.login_box .logo {
+				text-align: center;
+				margin-top: 15px;
+			}
+			.login_box .input-prepend {
+				margin: 15px auto 0px 60px;
+			}
+			.login_box .input-prepend  input {
+				width: 160px;
+			}
+		</style>
+	</HEAD>
+	<BODY>
+		<#if Session['SPRING_SECURITY_LAST_EXCEPTION']?exists>
+		<tr>
+			<td align="right" colspan="2"><a style="color:red;"> 错误信息：${Session['SPRING_SECURITY_LAST_EXCEPTION'].message}</a></td>
+		</tr>
+		</#if>
+
+		<div class="login_box">
+			<div class="logo"><img src="images/login_logo.png" />
+			</div>
+			<div class="formWrapper">
+				<form  id="loginForm" class="frameForm" action="<@spring.url ''/>/j_spring_security_check" method="POST">
+					<div class="input-prepend">
+						<span class="add-on">用户名</span>
+						<input type="text" name="j_username" />
+					</div>
+					<div class="input-prepend">
+						<span class="add-on">密　码</span>
+						<input type="password" name="j_password" />
+					</div>
+					<div style="padding-left: 58px;  padding-top: 5px;">
+						<a>忘记密码？</a>
+					</div>
+					<div style="padding-left: 58px;margin-top: 10px;padding-right: 66px;">
+						<label class="checkbox" style="float: left;margin-top: 6px;">
+							<input type="checkbox">
+							记住密码 </label>
+						<button type="submit" class="btn" style="float: right">
+							登录
+						</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</BODY>
+</HTML>

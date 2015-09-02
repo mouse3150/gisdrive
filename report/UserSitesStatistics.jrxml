@@ -1,0 +1,477 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version last-->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="UserSitesStatistics" language="groovy" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" isIgnorePagination="true" uuid="468ddcc6-010c-465e-be6b-24065b5774ab">
+	<property name="ireport.zoom" value="1.7715610000000013"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="border"/>
+	<subDataset name="SiteCapacityDataset" uuid="6d3f0b4a-148b-4ca8-b6f0-d2b2ebb27c5b">
+		<queryString>
+			<![CDATA[]]>
+		</queryString>
+		<field name="series" class="java.lang.String">
+			<fieldDescription><![CDATA[series]]></fieldDescription>
+		</field>
+		<field name="category" class="java.lang.String">
+			<fieldDescription><![CDATA[category]]></fieldDescription>
+		</field>
+		<field name="value" class="java.lang.Number">
+			<fieldDescription><![CDATA[value]]></fieldDescription>
+		</field>
+	</subDataset>
+	<subDataset name="SiteTimePartDataset" uuid="e5598d11-0e7a-4466-957e-4c13de5bb323">
+		<queryString>
+			<![CDATA[]]>
+		</queryString>
+		<field name="value" class="java.lang.Number">
+			<fieldDescription><![CDATA[value]]></fieldDescription>
+		</field>
+		<field name="label" class="java.lang.String">
+			<fieldDescription><![CDATA[label]]></fieldDescription>
+		</field>
+		<field name="key" class="java.lang.String">
+			<fieldDescription><![CDATA[key]]></fieldDescription>
+		</field>
+	</subDataset>
+	<subDataset name="SitesCapacityTrendDataset" uuid="c9e53bc4-5718-4eb3-98e3-95754e73289c">
+		<queryString>
+			<![CDATA[]]>
+		</queryString>
+		<field name="value" class="java.lang.Number">
+			<fieldDescription><![CDATA[value]]></fieldDescription>
+		</field>
+		<field name="series" class="java.lang.String">
+			<fieldDescription><![CDATA[series]]></fieldDescription>
+		</field>
+		<field name="category" class="java.lang.String">
+			<fieldDescription><![CDATA[category]]></fieldDescription>
+		</field>
+	</subDataset>
+	<subDataset name="SitesTimeTrendDataset" uuid="5843e9c8-086f-4e9f-9881-9e0e4e13f7ab">
+		<queryString>
+			<![CDATA[]]>
+		</queryString>
+		<field name="category" class="java.lang.String">
+			<fieldDescription><![CDATA[category]]></fieldDescription>
+		</field>
+		<field name="series" class="java.lang.String">
+			<fieldDescription><![CDATA[series]]></fieldDescription>
+		</field>
+		<field name="value" class="java.lang.Number">
+			<fieldDescription><![CDATA[value]]></fieldDescription>
+		</field>
+	</subDataset>
+	<parameter name="createTime" class="java.lang.String"/>
+	<parameter name="siteCount" class="java.lang.String"/>
+	<parameter name="reportTitle" class="java.lang.String"/>
+	<parameter name="siteCapacityData" class="net.sf.jasperreports.engine.JRDataSource"/>
+	<parameter name="siteTimePartData" class="net.sf.jasperreports.engine.JRDataSource"/>
+	<field name="siteNumber" class="java.lang.String"/>
+	<field name="siteName" class="java.lang.String"/>
+	<field name="siteStatus" class="java.lang.String"/>
+	<field name="siteOS" class="java.lang.String"/>
+	<field name="siteConfiguration" class="java.lang.String"/>
+	<field name="siteType" class="java.lang.String"/>
+	<field name="siteCapacity" class="java.lang.String"/>
+	<field name="siteTime" class="java.lang.String"/>
+	<title>
+		<band height="76" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="555" height="36" uuid="bc58f0e3-a66c-40d9-9b0d-2853fa22af90"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="华文中宋" size="24" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{reportTitle}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="231" y="36" width="80" height="20" uuid="d043501e-51f4-4076-8fd1-1f77db667699"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="华文中宋" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[时间]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="311" y="36" width="244" height="20" uuid="42e1e7a6-494e-479a-9b01-36fae2b3ed7d"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="华文中宋"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{createTime}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="54" y="36" width="177" height="20" uuid="378db113-bc40-494a-b65f-0cba0a2546cd"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="华文中宋"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{siteCount}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="36" width="54" height="20" uuid="3f51a1e3-6c2a-4700-9346-4138fd659344"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="华文中宋" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[站点总数]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="436" y="56" width="52" height="20" forecolor="#000000" backcolor="#FFFFFF" uuid="3c36ff4f-50b9-4acd-859d-40a259cce7f7"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="华文中宋" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[处理量]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="488" y="56" width="67" height="20" forecolor="#000000" backcolor="#FFFFFF" uuid="6b3b7020-c425-41ec-a566-a3bd7a88fa04"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="华文中宋" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[工作时间]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="311" y="56" width="85" height="20" forecolor="#000000" backcolor="#FFFFFF" uuid="f574c9c4-d40b-4d4d-b1cb-bc9d656103c2"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="华文中宋" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[配置]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="396" y="56" width="40" height="20" forecolor="#000000" backcolor="#FFFFFF" uuid="35ddfc25-8677-4d71-95c0-28c7a2ea3f97"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="华文中宋" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[类型]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="231" y="56" width="80" height="20" forecolor="#000000" backcolor="#FFFFFF" uuid="750dd78a-a49b-464a-854b-a327c660e947"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="华文中宋" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[OS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="191" y="56" width="40" height="20" forecolor="#000000" backcolor="#FFFFFF" uuid="8590ec14-f49e-4413-9c9b-a8304e2b4dc7"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="华文中宋" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[状态]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="56" width="54" height="20" forecolor="#000000" backcolor="#FFFFFF" uuid="da933f5f-218f-4451-a8b5-8ca4ef804a15"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="华文中宋" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[编号]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="54" y="56" width="137" height="20" forecolor="#000000" backcolor="#FFFFFF" uuid="61f89b5b-2f7e-4be8-9a6f-ca589833675e"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="华文中宋" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[名称]]></text>
+			</staticText>
+		</band>
+	</title>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement stretchType="RelativeToBandHeight" x="311" y="0" width="85" height="20" uuid="83f4d301-6c34-4c3c-b7e4-da02b272585f"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="华文中宋"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{siteConfiguration}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement stretchType="RelativeToBandHeight" x="436" y="0" width="52" height="20" uuid="b4045d42-d61e-4615-b856-ba470ec72b58"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="华文中宋"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{siteCapacity}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement stretchType="RelativeToBandHeight" x="396" y="0" width="40" height="20" uuid="07ce2c34-3e37-4e42-b328-1fd40598510c"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="华文中宋"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{siteType}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement stretchType="RelativeToBandHeight" x="231" y="0" width="80" height="20" uuid="7881671c-11c7-4336-8427-5d2e567a0157"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="华文中宋"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{siteOS}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement stretchType="RelativeToBandHeight" x="191" y="0" width="40" height="20" uuid="b95f95fb-df2a-4cb2-9ab8-917eea132d62"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="华文中宋"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{siteStatus}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement stretchType="RelativeToBandHeight" x="54" y="0" width="137" height="20" uuid="1f8d2797-a592-40d3-8f2d-92c0cbede329"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="华文中宋"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{siteName}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="54" height="20" uuid="baeffdd7-4708-47d3-825b-f32cc31d37e7"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="华文中宋"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{siteNumber}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement stretchType="RelativeToBandHeight" x="488" y="0" width="67" height="20" uuid="9bf6521b-4bb6-459b-b3b4-753db725b82a"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="华文中宋"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{siteTime}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="403">
+			<staticText>
+				<reportElement x="0" y="0" width="554" height="18" uuid="38d17296-a281-4928-8d19-c278a52bcf54"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="华文中宋" size="12" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[站点处理量]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="146" width="554" height="18" uuid="09017d55-77b8-48b7-ae9f-21cf33dd3838"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="华文中宋" size="12" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[工作时间占比]]></text>
+			</staticText>
+			<pie3DChart>
+				<chart>
+					<reportElement x="0" y="164" width="553" height="196" uuid="2e2130b3-6115-45ad-bef2-3c30e68be141"/>
+					<box>
+						<pen lineWidth="1.0"/>
+						<topPen lineWidth="1.0"/>
+						<leftPen lineWidth="1.0"/>
+						<bottomPen lineWidth="1.0"/>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<chartTitle/>
+					<chartSubtitle/>
+					<chartLegend/>
+				</chart>
+				<pieDataset>
+					<dataset>
+						<datasetRun subDataset="SiteTimePartDataset" uuid="18f5fa0e-5936-4412-b6a4-6ea93f7170c7">
+							<dataSourceExpression><![CDATA[$P{siteTimePartData}]]></dataSourceExpression>
+						</datasetRun>
+					</dataset>
+					<keyExpression><![CDATA[$F{label}]]></keyExpression>
+					<valueExpression><![CDATA[$F{value}]]></valueExpression>
+					<labelExpression><![CDATA[$F{label}]]></labelExpression>
+				</pieDataset>
+				<pie3DPlot>
+					<plot/>
+					<itemLabel/>
+				</pie3DPlot>
+			</pie3DChart>
+			<bar3DChart>
+				<chart>
+					<reportElement x="0" y="18" width="554" height="128" uuid="da08ba99-dab0-4165-b0c5-a491d1f33672"/>
+					<box>
+						<pen lineWidth="1.0"/>
+						<topPen lineWidth="1.0"/>
+						<leftPen lineWidth="1.0"/>
+						<bottomPen lineWidth="1.0"/>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<chartTitle/>
+					<chartSubtitle/>
+					<chartLegend/>
+				</chart>
+				<categoryDataset>
+					<dataset>
+						<datasetRun subDataset="SiteCapacityDataset" uuid="16b96aaf-f93a-4c54-9e64-0a9ed047d374">
+							<dataSourceExpression><![CDATA[$P{siteCapacityData}]]></dataSourceExpression>
+						</datasetRun>
+					</dataset>
+					<categorySeries>
+						<seriesExpression><![CDATA[$F{series}]]></seriesExpression>
+						<categoryExpression><![CDATA[$F{category}]]></categoryExpression>
+						<valueExpression><![CDATA[$F{value}]]></valueExpression>
+					</categorySeries>
+				</categoryDataset>
+				<bar3DPlot>
+					<plot/>
+					<itemLabel/>
+					<categoryAxisFormat>
+						<axisFormat/>
+					</categoryAxisFormat>
+					<valueAxisFormat>
+						<axisFormat/>
+					</valueAxisFormat>
+				</bar3DPlot>
+			</bar3DChart>
+		</band>
+	</pageFooter>
+</jasperReport>

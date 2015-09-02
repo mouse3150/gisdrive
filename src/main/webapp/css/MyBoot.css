@@ -1,0 +1,74 @@
+.nav-list {
+	padding-right: 15px;
+	padding-left: 15px;
+	margin-bottom: 0;
+}
+
+.nav {
+	margin-bottom: 20px;
+	margin-left: 0;
+	list-style: none;
+}
+
+ul,ol {
+	padding: 0;
+	margin: 0 0 10px 25px;
+}
+
+ul,menu,dir {
+	display: block;
+	list-style-type: disc;
+	-webkit-margin-before: 1em;
+	-webkit-margin-after: 1em;
+	-webkit-margin-start: 0px;
+	-webkit-margin-end: 0px;
+	-webkit-padding-start: 40px;
+}
+
+.nav-list>li>a,.nav-list .nav-header {
+	margin-right: -15px;
+	margin-left: -15px;
+	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+.nav-header {
+	display: block;
+	padding: 3px 15px;
+	font-size: 11px;
+	font-weight: bold;
+	line-height: 20px;
+	color: #999999;
+	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+	text-transform: uppercase;
+}
+
+li {
+	line-height: 20px;
+}
+
+.nav {
+	list-style: none;
+}
+
+.nav-list>li>a {
+	padding: 3px 15px;
+}
+
+.nav>li>a {
+	display: block;
+}
+
+.form-horizontal .control-group {
+	margin-bottom: 20px;
+}
+
+.form-horizontal .control-label {
+	float: left;
+	width: 160px;
+	padding-top: 5px;
+	text-align: right;
+}
+
+.form-horizontal .controls {
+	margin-left: 180px;
+}
